@@ -27,12 +27,12 @@ func TestCache_Workflow(t *testing.T) {
 	}
 	// Sets the first key/value.
 	if err := c.Set(&csvcache.Item{Key: "rv"}); err != nil {
-		t.Error("expected successfull setting of first key")
+		t.Error("expected successful setting of first key")
 	}
 	// Gets the first key.
 	data, err := c.Get("rv")
 	if err != nil {
-		t.Error("expected successfull getting of first key")
+		t.Error("expected successful getting of first key")
 	}
 	if data != nil {
 		t.Error("expected no data")
@@ -137,11 +137,11 @@ func TestCache_Expire(t *testing.T) {
 	c := csvcache.New(dir, 1*time.Second)
 	// Tries to set the first key/value.
 	if err := c.Set(&csvcache.Item{Key: "rv"}); err != nil {
-		t.Error("expected successfull setting of first key")
+		t.Error("expected successful setting of first key")
 	}
 	// Gets the same key.
 	if _, err := c.Get("rv"); err != nil {
-		t.Error("expected successfull getting of first key")
+		t.Error("expected successful getting of first key")
 	}
 	// Have a break
 	time.Sleep(1 * time.Second)
